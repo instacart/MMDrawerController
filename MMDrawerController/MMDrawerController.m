@@ -786,7 +786,7 @@ static NSString *MMDrawerOpenSideKey = @"MMDrawerOpenSide";
     return [self.centerViewController shouldAutorotateToInterfaceOrientation:orientation];
 }
 
-- (NSUInteger)supportedInterfaceOrientations {
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations {
     return self.centerViewController.supportedInterfaceOrientations;
 }
 
