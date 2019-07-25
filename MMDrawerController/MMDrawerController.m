@@ -814,8 +814,20 @@ static NSString *MMDrawerOpenSideKey = @"MMDrawerOpenSide";
     }
 }
 
--(BOOL)shouldAutorotate{
-    return YES;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)orientation {
+    return [self.centerViewController shouldAutorotateToInterfaceOrientation:orientation];
+}
+
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations {
+    return self.centerViewController.supportedInterfaceOrientations;
+}
+
+- (BOOL)shouldAutorotate {
+    return self.centerViewController.shouldAutorotate;
+}
+
+- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation {
+    return self.centerViewController.preferredInterfaceOrientationForPresentation;
 }
 
 -(void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation{
